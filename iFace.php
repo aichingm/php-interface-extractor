@@ -34,12 +34,16 @@ if (is_file($outfile)) {
 
 $rClass = new ReflectionClass($class);
 $rMethods = $rClass->getMethods();
+$interfaceName = trim(readline("Name for the interface [I{$rClass->getShortName()}]: "));
+if(empty($interfaceName)){
+$interfaceName = "I".$rClass->getShortName();
+}
 $interfaceContent = "<?php " . PHP_EOL;
 $interfaceContent .= "namespace " . $rClass->getNamespaceName() . ";" . PHP_EOL;
-$interfaceContent .= "interface " . $rClass->getShortName() . "{" . PHP_EOL;
+$interfaceContent .= "interface " . $interfaceName. "{" . PHP_EOL;
 
 foreach ($rMethods as $rMethod) {
-    if ($rMethod->isPublic()) {
+    if ($rMethod->isPublic() && !$rMethod->isStatic()) {
         $interfaceContent .= "   public function ";
         $interfaceContent .= $rMethod->getName() . "(";
         foreach ($rMethod->getParameters() as $rParameter) {
