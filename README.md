@@ -7,7 +7,7 @@ Usage
 -----
 From terminal enter:
 
-```php
+```bash
 php iFace.php
 ```
 and follow the instructions
