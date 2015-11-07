@@ -19,6 +19,7 @@ Installation
 
 __Get it with style:__
 
+    wget https://raw.githubusercontent.com/aichingm/php-interface-extractor/master/extract-interface.php -O extract-interface.php
 
 __Get it with `git clone`:__
 
@@ -26,14 +27,16 @@ __Get it with `git clone`:__
 
 __Get it from the github website:__
 
+    https://raw.githubusercontent.com/aichingm/php-interface-extractor/master/extract-interface.php
+   
  
 
 Requirements
 ------------
 
-*. None.
+* None.
 
 Optional Requirements
 ---------------------
 
-*. The readline extension (to run in interactive mode)
+* The readline extension (to run in interactive mode)
